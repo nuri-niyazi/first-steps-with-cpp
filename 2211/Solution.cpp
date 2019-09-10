@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	int br = 0, lwrd = 0, l = 0;
+	char ch;
+
+	do
+	{
+		cin.get(ch);
+		if(!((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')))
+		{
+			if(lwrd && l) br++;
+			lwrd = 0;
+			l = 0;
+		}
+		else
+		{
+			lwrd++;
+			if(ch == 'd' || ch == 'D') l = 1;
+		}
+	}while(ch != '.');
+
+	cout << br << endl;
+	return 0;
+}
